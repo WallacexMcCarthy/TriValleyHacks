@@ -1,10 +1,14 @@
-from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import *
-import sys
 
 def main():
-    app = QApplication(sys.argv)
+    app = QApplication([])
     window = QWidget()
+    window.setGeometry(200, 200, 300, 300)
+
+    label = QLabel(window)
+    label.setText("Hello")
+    label.show()
+
     window.show()
     app.exec_()
 
