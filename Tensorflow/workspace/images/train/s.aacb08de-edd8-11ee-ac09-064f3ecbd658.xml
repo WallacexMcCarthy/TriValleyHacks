@@ -1,0 +1,26 @@
+<annotation>
+	<folder>collectedimages</folder>
+	<filename>s.aacb08de-edd8-11ee-ac09-064f3ecbd658.jpg</filename>
+	<path>/Users/wallacemccarthy/Documents/Pycharm/Untitled/Tensorflow/workspace/images/collectedimages/s.aacb08de-edd8-11ee-ac09-064f3ecbd658.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>s</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>509</xmin>
+			<ymin>198</ymin>
+			<xmax>1046</xmax>
+			<ymax>733</ymax>
+		</bndbox>
+	</object>
+</annotation>

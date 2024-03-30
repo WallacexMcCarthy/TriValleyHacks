@@ -1,0 +1,26 @@
+<annotation>
+	<folder>collectedimages</folder>
+	<filename>o.731e65e0-edd6-11ee-81a0-064f3ecbd658.jpg</filename>
+	<path>/Users/wallacemccarthy/Documents/Pycharm/Untitled/Tensorflow/workspace/images/collectedimages/o.731e65e0-edd6-11ee-81a0-064f3ecbd658.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>o</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>722</xmin>
+			<ymin>402</ymin>
+			<xmax>1360</xmax>
+			<ymax>917</ymax>
+		</bndbox>
+	</object>
+</annotation>

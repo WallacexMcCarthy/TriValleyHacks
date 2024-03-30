@@ -1,0 +1,26 @@
+<annotation>
+	<folder>collectedimages</folder>
+	<filename>n.3b6265fc-edd6-11ee-b6e9-064f3ecbd658.jpg</filename>
+	<path>/Users/wallacemccarthy/Documents/Pycharm/Untitled/Tensorflow/workspace/images/collectedimages/n.3b6265fc-edd6-11ee-b6e9-064f3ecbd658.jpg</path>
+	<source>
+		<database>Unknown</database>
+	</source>
+	<size>
+		<width>1920</width>
+		<height>1080</height>
+		<depth>3</depth>
+	</size>
+	<segmented>0</segmented>
+	<object>
+		<name>n</name>
+		<pose>Unspecified</pose>
+		<truncated>0</truncated>
+		<difficult>0</difficult>
+		<bndbox>
+			<xmin>717</xmin>
+			<ymin>390</ymin>
+			<xmax>1328</xmax>
+			<ymax>876</ymax>
+		</bndbox>
+	</object>
+</annotation>
