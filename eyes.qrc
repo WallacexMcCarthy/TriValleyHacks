@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>Images for GUI/eye_closed.png</file>
+        <file>Images for GUI/eye_open.png</file>
+    </qresource>
+</RCC>
