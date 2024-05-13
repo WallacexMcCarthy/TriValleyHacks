@@ -12,6 +12,8 @@ cred = credentials.Certificate('sign-language-user-data-da9ba1b8df23.json')
 app = firebase_admin.initialize_app(cred)
 db = firestore.client()
 global current_account
+# defaults the current account to user for testing
+current_account = "user"
 
 
 class LogInGUI(QMainWindow):
@@ -116,7 +118,7 @@ class CreateAccountGUI(QMainWindow):
 
             # add the given data to a new document in the database
             else:
-                data = {"username": self.username.text(), "password": self.password.text()}
+                data = {"username": self.username.text(), "password": self.password.text(), "level": 1}
                 doc_ref.set(data)
                 message = QMessageBox()
                 message.setText("Account Created")
@@ -125,7 +127,6 @@ class CreateAccountGUI(QMainWindow):
                 self.window = LogInGUI()
                 self.hide()
                 self.window.show()
-
 
     def backToLog(self):
         # opens the login gui
@@ -153,19 +154,58 @@ class CreateAccountGUI(QMainWindow):
 
 class MainMenu(QMainWindow):
     def __init__(self):
-        username: str
 
         super(MainMenu, self).__init__()
         uic.loadUi("MainMenu.ui", self)
         self.show()
         doc_ref = db.collection("users").document(current_account)
-        self.level_progress_bar.setValue(0)
+        doc = doc_ref.get()
+        self.level_progress_bar.setValue(int((int(doc.to_dict()["level"] - 1)/6) * 100))
         self.welcome_lbl.setText("Welcome " + current_account)
+
+        self.actionClose.triggered.connect(self.close)
+        self.lvl_1_btn.clicked.connect(self.to_lvl1)
+
+    def close(self):
+        sys.exit()
+
+    def to_lvl1(self):
+        # opens level 1
+        self.window = Level1()
+        self.hide()
+        self.window.show()
+
+
+class Level1(QMainWindow):
+
+    def __init__(self):
+        # opening gui and connecting buttons
+        super(Level1, self).__init__()
+        uic.loadUi("Level1.ui", self)
+        self.show()
+
+        self.actionClose.triggered.connect(self.close)
+        self.actionMenu.triggered.connect(self.back_to_menu)
+
+    def close(self):
+        sys.exit()
+
+    def back_to_menu(self):
+        # opens main menu
+        self.window = MainMenu()
+        self.hide()
+        self.window.show()
 
 
 def main():
+    # # full program run code
+    # main_app = QApplication([])
+    # window = LogInGUI()
+    # main_app.exec_()
+
+    # testing for main menu
     main_app = QApplication([])
-    window = LogInGUI()
+    window = MainMenu()
     main_app.exec_()
 
 
